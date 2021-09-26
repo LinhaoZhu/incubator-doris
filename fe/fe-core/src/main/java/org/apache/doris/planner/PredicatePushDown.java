@@ -59,7 +59,7 @@ public class PredicatePushDown {
         TupleId rightSideTuple = tupleIdList.get(0);
         List<Expr> unassignedRightSideConjuncts = analyzer.getUnassignedConjuncts(scanNode);
         List<Expr> eqJoinPredicates = analyzer.getEqJoinConjuncts(rightSideTuple);
-        if (eqJoinPredicates != null) {
+        if (eqJoinPredicates != null && eqJoinPredicates.size() > 0) {
             List<Expr> allConjuncts = analyzer.getConjuncts(analyzer.getAllTupleIds());
             allConjuncts.removeAll(unassignedRightSideConjuncts);
             for (Expr conjunct : allConjuncts) {
