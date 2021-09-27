@@ -26,6 +26,7 @@ import java.util.UUID;
 public class LogBuilder {
     private final StringBuilder sb;
     private final List<LogEntry> entries;
+    private String test;
 
     public LogBuilder(String identifier) {
         sb = new StringBuilder(identifier).append("-");
